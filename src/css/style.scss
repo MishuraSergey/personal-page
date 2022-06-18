@@ -15,7 +15,7 @@ body {
         font-size: $default-mobile-font;
     }
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Work Sans', sans-serif;
     font-weight: bold;
     line-height: .9;
@@ -23,6 +23,11 @@ h1, h2, h3, h4 {
 a {
     text-decoration: none;
     color: $textColor;
+    &[href^="mailto"] {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 h1 {
     font-size: emSize(100);
@@ -32,6 +37,9 @@ h2 {
 }
 h4 {
     font-size: emSize(22);
+}
+h5 {
+    font-size: emSize(18);
 }
 p {
     line-height: 1.6;
@@ -48,6 +56,7 @@ header {
         top: 0;
         left: 0;
         transition: background-color .4s ease;
+        z-index: 2;
         @media all and (max-width: $mobile-point) {
             padding: emSize(20);
         }
@@ -114,6 +123,9 @@ header {
                     transition: color .4s ease;
                     color: #a58132;
                 }
+                &:last-of-type {
+                    padding-right: 0;
+                }
                 &:not(:last-of-type) {
                     border-right: 1px solid #000;
                     @media all and (max-width: $mobile-point) {
@@ -170,9 +182,9 @@ header {
     }
 }
 main {
+    position: relative;
     margin-top: 70px;
     padding: 40px;
-    margin-bottom: 200vh;
     @media all and (max-width: $mobile-point) {
         margin-top: emSize(60);
         padding: emSize(20);
@@ -192,6 +204,7 @@ main {
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
     visibility: hidden;
     opacity: 0;
+    z-index: 2;
     @media all and (max-width: $mobile-point) {
         right: emSize(20);
         bottom: emSize(20);
@@ -203,5 +216,56 @@ main {
         visibility: visible;
         opacity: 1;
         transition: opacity .4s ease;
+    }
+}
+footer {
+    position: relative;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media all and (max-width: $mobile-point) {
+        padding: emSize(20);
+        flex-direction: column;
+    }
+    .footer__divider {
+        display: inline;
+        position: absolute;
+        top: 0;
+        @include centerX;
+        width: calc(100% - 80px);
+        border-top: 1px solid #c7c7c7;
+        @media all and (max-width: $mobile-point) {
+            width: 100%;
+        }
+    }
+    .footer__column {
+        @media all and (max-width: $mobile-point) {
+            &:not(:last-of-type){
+                margin-bottom: 2em;
+            }
+        }
+        h5 {
+            margin-bottom: 1em;
+            @media all and (max-width: $mobile-point) {
+                margin-bottom: .5em;
+            }
+        }
+        .column__list {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            a {
+                display: block;
+                width: emSize(24);
+                height: emSize(24);
+                &:not(:last-of-type){
+                    margin-right: .5em;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
