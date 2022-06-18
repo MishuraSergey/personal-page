@@ -1,9 +1,10 @@
 import './css/style.scss';
 
-const NAV = document.getElementById('main_nav') as HTMLElement,
-    BURGER_BUTTON = document.querySelector('.nav__burger') as HTMLElement,
-    MOBILE_NAV = document.querySelector('.nav__links') as HTMLElement,
-    UP_BUTTON = document.querySelector('.scroll_top') as HTMLElement;
+const NAV: HTMLElement = document.getElementById('main_nav'),
+    BURGER_BUTTON: HTMLElement = document.querySelector('.nav__burger'),
+    MOBILE_NAV: HTMLElement = document.querySelector('.nav__links'),
+    UP_BUTTON: HTMLElement = document.querySelector('.scroll_top'),
+    CONTENT_LINKS: NodeListOf<HTMLElement> = document.querySelectorAll('[href^="#"]');
 
 ['DOMContentLoaded', 'scroll'].forEach(event => {
     document.addEventListener(event, function(): void {
@@ -24,4 +25,15 @@ BURGER_BUTTON.addEventListener('click', function () : void {
 
 UP_BUTTON.addEventListener('click', function () : void {
     window.scrollTo({top: 0,behavior: 'smooth'});
+});
+
+CONTENT_LINKS.forEach(el => {
+    el.onclick = () => {
+        const ELID: string = el.getAttribute('href'),
+            ACTIVE: HTMLElement = document.querySelector(ELID),
+            SIBLINGS: Array<Element> = Array.from(ACTIVE.parentElement.children).filter(ch=>ch!=ACTIVE);
+        ACTIVE.classList.add('active');
+        SIBLINGS.forEach(sibling => sibling.classList.remove('active'));
+    }
 })
+

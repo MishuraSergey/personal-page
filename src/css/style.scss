@@ -189,6 +189,21 @@ main {
         margin-top: emSize(60);
         padding: emSize(20);
     }
+    section {
+        opacity: 0;
+        visibility: hidden;
+        max-width: 980px;
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 1s ease-out;
+        &.active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 .scroll_top {
     position: fixed;
