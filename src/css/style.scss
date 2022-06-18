@@ -1,0 +1,207 @@
+@import './normalize.css';
+@import './defaults.scss';
+
+$bgcolor : #f3f3f3;
+$textColor : #000;
+
+body {
+    font-family: 'Avenir Light', sans-serif;
+    background-color: $bgcolor;
+    min-width: 320px;
+    /*@media all and (max-width: $pc-point) {
+        font-size: $default-pc-font;
+    }*/
+    @media all and (max-width: $mobile-point) {
+        font-size: $default-mobile-font;
+    }
+}
+h1, h2, h3, h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    line-height: .9;
+}
+a {
+    text-decoration: none;
+    color: $textColor;
+}
+h1 {
+    font-size: emSize(100);
+}
+h2 {
+    font-size: emSize(50);
+}
+h4 {
+    font-size: emSize(22);
+}
+p {
+    line-height: 1.6;
+}
+header {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 40px;
+        width: 100%;
+        background-color: $bgcolor;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: background-color .4s ease;
+        @media all and (max-width: $mobile-point) {
+            padding: emSize(20);
+        }
+        &.scrolled {
+            transition: background-color .4s ease;
+            background-color: #fff;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+        }
+        .nav__title {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            h4 {
+                margin-right: 10px;
+            }
+            span {
+                @media all and (max-width: $mobile-point) {
+                    display: none;
+                }
+            }
+        }
+        .nav__links {
+            display: flex;
+            @media all and (max-width: $mobile-point) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: inherit;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                visibility: hidden;
+                opacity: 0;
+                transition: all .4s ease;
+                a {
+                    transition: all .4s ease;
+                    opacity: 0;
+                    transform: translateY(-15%);
+                }
+                &.enabled {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: all .4s ease;
+                    background-color: $bgcolor;
+                    a {
+                        transition: all .4s .2s ease;
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+            a {
+                display: inline-block;
+                padding: 6px 10px;
+                position: relative;
+                line-height: .8;
+                transition: color .4s ease;
+                @media all and (max-width: $mobile-point) {
+                    font-size: 150%;
+                }
+                &:hover {
+                    transition: color .4s ease;
+                    color: #a58132;
+                }
+                &:not(:last-of-type) {
+                    border-right: 1px solid #000;
+                    @media all and (max-width: $mobile-point) {
+                        border: 0;
+                        margin-bottom: emSize(20);
+                    }
+                }
+            }
+        }
+        .nav__burger {
+            display: none;
+            @media all and (max-width: $mobile-point) {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                width: emSize(25);
+                height: emSize(20);
+                &.enabled {
+                    span:first-of-type {
+                        transition: transform .2s ease-in-out;
+                        transform: translateY(emSize(10)) translateY(-50%) rotate(-45deg);
+                    }
+                    span:nth-of-type(2) {
+                        transition: opacity .2s ease-in-out;
+                        opacity: 0;
+                    }
+                    span:last-of-type {
+                        transition: transform .2s ease-in-out;
+                        transform: translateY(- emSize(10)) translateY(50%) rotate(45deg);
+                    }
+                }
+                span {
+                    width: 100%;
+                    height: emSize(2);
+                    background: #000;
+                    border-radius: 2px;
+                    &:first-of-type {
+                        transition: transform .2s ease-in-out;
+                        transform: rotate(0);
+                    }
+                    &:nth-of-type(2) {
+                        transition: opacity .2s ease-in-out;
+                        opacity: 1;
+                    }
+                    &:last-of-type {
+                        transition: transform .2s ease-in-out;
+                        transform: rotate(0);
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    margin-top: 70px;
+    padding: 40px;
+    margin-bottom: 200vh;
+    @media all and (max-width: $mobile-point) {
+        margin-top: emSize(60);
+        padding: emSize(20);
+    }
+}
+.scroll_top {
+    position: fixed;
+    right: emSize(40);
+    bottom: emSize(25);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: emSize(50);
+    height: emSize(50);
+    background: url("../images/up-arr.svg") no-repeat center center / contain, #fff;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    @media all and (max-width: $mobile-point) {
+        right: emSize(20);
+        bottom: emSize(20);
+    }
+    &:active {
+        transform: translateY(2px);
+    }
+    &.shown {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .4s ease;
+    }
+}
