@@ -12,14 +12,14 @@
         <nav id="main_nav">
           <div class="nav__title">
             <h4>
-              <a href="/" title="Home page">Serhii Mishura</a>
+              <a href="#home">Serhii Mishura</a>
             </h4>
             <span>Frontend Developer</span>
           </div>
           <div class="nav__links">
-            <a href="#resume" title="Go to Resume">Resume</a>
-            <a href="#projects" title="Go to Projects">Projects</a>
-            <a href="#contact" title="Go to Contact">Contact</a>
+            <a href="#resume">Resume</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
           </div>
           <button class="nav__burger">
             <span></span>
@@ -29,7 +29,23 @@
         </nav>
       </header>
       <main>
-        <section class="active" id="main">Home</section>
+        <section class="active" id="home">
+          <div class="home__block">
+            <div class="home__pic">
+              <img src="src/images/photo.jpg" alt="Serhii Mishura photo">
+            </div>
+            <div class="home__about">
+              <h1>Hello</h1>
+              <h4>A bit about me</h4>
+              <p>My name is Serhii and I'm a frontend developer. During my career I worked my way up from a CMS content manager to a full-grown frontend developer and created many web applications of different scales and levels. I love software development, and front-end development in particular, because it gives me room for creativity and provides various tools to translate my ideas into something tangible and useful. In my free time, I like to play boardgames and TTRPG with my wife and friends.</p>
+              <div class="about__actions">
+                <a href="#resume">Resume</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="resume">Resume</section>
         <section id="projects">Projects</section>
         <section id="contact">Contact</section>
@@ -40,28 +56,28 @@
         <div class="footer__column">
           <h5>Phone</h5>
           <p>
-            <a href="tel:+14039703033" title="Call +1 403-970-3033">+1 403-970-3033</a>
+            <a href="tel:+14039703033">+1 403-970-3033</a>
           </p>
         </div>
         <div class="footer__column">
           <h5>Email</h5>
           <p>
-            <a href="mailto:dev.mishura@gmail.com" title="Mail to dev.mishura@gmail.com">dev.mishura@gmail.com</a>
+            <a href="mailto:dev.mishura@gmail.com">dev.mishura@gmail.com</a>
           </p>
         </div>
         <div class="footer__column">
           <h5>Connect</h5>
           <div class="column__list">
-            <a href="https://linkedin.com/in/mishura" target="_blank" title="Go to LinkedIn profile">
+            <a href="https://linkedin.com/in/mishura" target="_blank">
               <img src="src/images/linkedin.svg" alt="LinkedIn logo">
             </a>
-            <a href="https://github.com/MishuraSergey" target="_blank" title="Go to GitHub profile">
+            <a href="https://github.com/MishuraSergey" target="_blank">
               <img src="src/images/github.svg" alt="GitHub logo">
             </a>
           </div>
         </div>
         <div class="footer__column">
-          <p>© 2022 By Serhii Mishura</p>
+          <p class="by">© 2022 By Serhii Mishura</p>
         </div>
       </footer>
     </div>
