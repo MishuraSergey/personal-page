@@ -40,7 +40,10 @@ h1 {
     }
 }
 h2 {
-    font-size: emSize(50);
+    font-size: emSize(42);
+}
+h3 {
+    font-size: emSize(26);
 }
 h4 {
     font-size: emSize(22);
@@ -48,6 +51,23 @@ h4 {
 h5 {
     font-size: emSize(18);
 }
+.strong {
+    font-weight: bold;
+}
+
+.with--divider:before {
+    content: '';
+    content: '';
+    position: absolute;
+    top: 0;
+    @include centerX;
+    width: calc(100vw - 80px);
+    border-top: 1px solid $lineColor;
+    @media all and (max-width: $mobile-point) {
+        width: 100%;
+    }
+}
+
 header {
     nav {
         display: flex;
@@ -129,6 +149,9 @@ header {
                 }
                 &:last-of-type {
                     padding-right: 0;
+                    @media all and (max-width: $mobile-point) {
+                        padding: 6px 10px;
+                    }
                 }
                 &:not(:last-of-type) {
                     border-right: 1px solid $lineColor;
@@ -189,6 +212,7 @@ main {
     position: relative;
     margin-top: 70px;
     padding: 40px;
+    overflow: hidden;
     @media all and (max-width: $mobile-point) {
         margin-top: emSize(60);
         padding: emSize(20);
@@ -201,17 +225,77 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        transition: opacity 1s ease-out;
+        transition: opacity 1s ease, transform 1s ease;
+        transform: translateY(10%);
         &.active {
             position: relative;
             opacity: 1;
             visibility: visible;
+            transform: translateY(0);
+        }
+        h2 {
+            a.download {
+                text-decoration: underline;
+                font-weight: normal;
+                font-size: 40%;
+            }
+            @media all and (max-width: $mobile-point) {
+                font-size: emSize(27);
+            }
         }
         p {
             line-height: 1.6;
         }
+        .section__content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: relative;
+            padding: 10% 0;
+            @media all and (max-width: $mobile-point) {
+                flex-direction: column;
+                padding: 15% 0;
+            }
+            h3 {
+                width: 50%;
+                opacity: 0;
+                transform: translateY(-50%);
+                transition: opacity .5s ease-out, transform .5s ease-out;
+                @media all and (max-width: $mobile-point) {
+                    width: 100%;
+                    margin-bottom: 15%;
+                    font-size: emSize(22);
+                }
+                &.always_shown {
+                    opacity: 1;
+                    transform: none;
+                }
+                &.shown {
+                    opacity: 1;
+                    transform: none;
+                    transition: opacity .5s ease-out, transform .5s ease-out;
+                }
+            }
+        }
     }
     #home {
+        &.active {
+            .home__block {
+                .home__about {
+                    .about__actions {
+                        a:first-of-type {
+                            animation: fall .5s .5s ease-out forwards;
+                        }
+                        a:nth-of-type(2) {
+                            animation: fall .5s .7s ease-out forwards;
+                        }
+                        a:last-of-type {
+                            animation: fall .5s .9s ease-out forwards;
+                        }
+                    }
+                }
+            }
+        }
         .home__block {
             display: flex;
             align-items: center;
@@ -271,7 +355,9 @@ main {
                         padding: .8em 1em;
                         width: 25%;
                         text-align: center;
-                        transition: all .4s ease;
+                        transition: color .4s ease, border-color .2s ease;
+                        transform: translateY(-50%);
+                        opacity: 0;
                         &:not(:last-of-type) {
                             margin-right: 1em;
                             @media all and (max-width: $mobile-point) {
@@ -279,13 +365,68 @@ main {
                             }
                         }
                         &:hover {
-                            transition: all .4s ease;
+                            transition: color .4s ease, border-color .2s ease;
                             color: $hoverColor;
                             border-color: $lineDarker;
                         }
                         @media all and (max-width: $mobile-point) {
                             width: 32%;
                             padding: .8em .5em;
+                        }
+                        @keyframes fall {
+                            to {
+                                transform: translateY(0);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #resume {
+        .section__content {
+            .exp {
+                width: 50%;
+                @media all and (max-width: $mobile-point) {
+                    width: 100%;
+                }
+                .exp__part {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    @media all and (max-width: $mobile-point) {
+                        flex-direction: column;
+                    }
+                    &:not(:first-of-type) {
+                        padding-top: 10%;
+                        @media all and (max-width: $mobile-point) {
+                            padding-top: 15%;
+                        }
+                    }
+                    .exp_when {
+                        flex-basis: 20%;
+                    }
+                    .exp_what {
+                        flex-basis: 80%;
+                        h5 {
+                            margin-bottom: .5em;
+                            @media all and (max-width: $mobile-point) {
+                                margin: .5em 0;
+                            }
+                        }
+                        .links {
+                            margin-top: .5em;
+                            a {
+                                text-decoration: underline;
+                                margin-right: .5em;
+                            }
+                        }
+                        .list {
+                            li {
+                                list-style: disc inside;
+                                line-height: 1.6;
+                            }
                         }
                     }
                 }
@@ -330,17 +471,6 @@ footer {
     @media all and (max-width: $mobile-point) {
         padding: emSize(20);
         flex-direction: column;
-    }
-    .footer__divider {
-        display: inline;
-        position: absolute;
-        top: 0;
-        @include centerX;
-        width: calc(100% - 80px);
-        border-top: 1px solid $lineColor;
-        @media all and (max-width: $mobile-point) {
-            width: 100%;
-        }
     }
     .footer__column {
         @media all and (max-width: $mobile-point) {

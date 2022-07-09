@@ -4,7 +4,8 @@ const NAV: HTMLElement = document.getElementById('main_nav'),
     BURGER_BUTTON: HTMLElement = document.querySelector('.nav__burger'),
     MOBILE_NAV: HTMLElement = document.querySelector('.nav__links'),
     UP_BUTTON: HTMLElement = document.querySelector('.scroll_top'),
-    CONTENT_LINKS: NodeListOf<HTMLElement> = document.querySelectorAll('[href^="#"]');
+    CONTENT_LINKS: NodeListOf<HTMLElement> = document.querySelectorAll('[href^="#"]'),
+    CONTENT_PARTS: NodeListOf<HTMLDListElement> = document.querySelectorAll('.section__content');
 
 ['DOMContentLoaded', 'scroll'].forEach(event => {
     document.addEventListener(event, function(): void {
@@ -13,7 +14,15 @@ const NAV: HTMLElement = document.getElementById('main_nav'),
         posY > 0 ? NAV.classList.add('scrolled') : NAV.classList.remove('scrolled');
 
         posY > window.innerHeight ? UP_BUTTON.classList.add('shown') : UP_BUTTON.classList.remove('shown');
-    })
+
+        //animate content inner headers
+        CONTENT_PARTS.forEach(el => {
+            let elPosTop = el.offsetTop;
+            if(posY + window.innerHeight/3 >= elPosTop){
+                el.querySelector('h3').classList.add('shown')
+            }
+        });
+    });
 });
 
 BURGER_BUTTON.addEventListener('click', function () : void {
@@ -47,10 +56,17 @@ CONTENT_LINKS.forEach(el => {
             }
         });
 
+        //remove shown class from each header to cycle animation on active content
+        CONTENT_PARTS.forEach(el => el.children[0].classList.remove('shown'));
+
         //close float nav and set burger to initial position on mobile devices
         if (MOBILE_NAV.classList.contains('enabled')){
             [BURGER_BUTTON, MOBILE_NAV].forEach(el => el.classList.remove('enabled'));
         }
     }
-})
+});
+
+
+
+
 
