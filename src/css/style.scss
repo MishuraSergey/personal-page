@@ -225,13 +225,12 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        transition: opacity 1s ease, transform 1s ease;
-        transform: translateY(10%);
+        transition: opacity 1s ease;
         &.active {
             position: relative;
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transition: opacity 1s ease;
         }
         h2 {
             a.download {
@@ -256,24 +255,30 @@ main {
                 flex-direction: column;
                 padding: 15% 0;
             }
-            h3 {
+            & > div {
                 width: 50%;
+            }
+            .drop_down {
                 opacity: 0;
                 transform: translateY(-50%);
                 transition: opacity .5s ease-out, transform .5s ease-out;
-                @media all and (max-width: $mobile-point) {
-                    width: 100%;
-                    margin-bottom: 15%;
-                    font-size: emSize(22);
-                }
-                &.always_shown {
-                    opacity: 1;
-                    transform: none;
-                }
                 &.shown {
                     opacity: 1;
                     transform: none;
                     transition: opacity .5s ease-out, transform .5s ease-out;
+                }
+            }
+            .description {
+                @media all and (max-width: $mobile-point) {
+                    width: 100%;
+                    margin-bottom: 15%;
+                }
+                h3 {
+                    line-height: 1.1;
+                    margin-bottom: .5em;
+                    @media all and (max-width: $mobile-point) {
+                        font-size: emSize(22);
+                    }
                 }
             }
         }
@@ -387,7 +392,6 @@ main {
     #resume {
         .section__content {
             .exp {
-                width: 50%;
                 @media all and (max-width: $mobile-point) {
                     width: 100%;
                 }
@@ -430,6 +434,26 @@ main {
                         }
                     }
                 }
+            }
+        }
+    }
+    #projects {
+        .description {
+            width: 45%;
+            @media all and (max-width: $mobile-point) {
+                width: 100%;
+                br {
+                    display: none;
+                }
+            }
+        }
+        .proj {
+            width: 45%;
+            @media all and (max-width: $mobile-point) {
+                width: 100%;
+            }
+            img {
+                width: 100%;
             }
         }
     }

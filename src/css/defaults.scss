@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
 @font-face {font-family: "Avenir Light";
-	src: url("https://db.onlinewebfonts.com/t/116af611cbcd9e4bada60b4e700430c1.woff2") format("woff2"),
-	url("https://db.onlinewebfonts.com/t/116af611cbcd9e4bada60b4e700430c1.woff") format("woff"),
-	url("https://db.onlinewebfonts.com/t/116af611cbcd9e4bada60b4e700430c1.ttf") format("truetype"),
+	src: url("../fonts/116af611cbcd9e4bada60b4e700430c1.woff2") format("woff2"),
+	url("../fonts/116af611cbcd9e4bada60b4e700430c1.woff") format("woff"),
+	url("../fonts/116af611cbcd9e4bada60b4e700430c1.ttf") format("truetype"),
 	url("https://db.onlinewebfonts.com/t/116af611cbcd9e4bada60b4e700430c1.svg#Avenir Light") format("svg");
 }
 
@@ -11,7 +11,7 @@ $default-font: 16px;
 $default-pc-font: .98vw;
 $default-mobile-font: 5vw;
 $pc-point: 1919px;
-$mobile-point: 768px;
+$mobile-point: 980px;
 
 
 @function emSize ($size) {

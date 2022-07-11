@@ -1,6 +1,6 @@
 import './css/style.scss';
 
-const NAV: HTMLElement = document.getElementById('main_nav'),
+const MAIN_NAV: HTMLElement = document.getElementById('main_nav'),
     BURGER_BUTTON: HTMLElement = document.querySelector('.nav__burger'),
     MOBILE_NAV: HTMLElement = document.querySelector('.nav__links'),
     UP_BUTTON: HTMLElement = document.querySelector('.scroll_top'),
@@ -11,15 +11,16 @@ const NAV: HTMLElement = document.getElementById('main_nav'),
     document.addEventListener(event, function(): void {
         let posY: number = window.scrollY;
 
-        posY > 0 ? NAV.classList.add('scrolled') : NAV.classList.remove('scrolled');
+        posY > 0 ? MAIN_NAV.classList.add('scrolled') : MAIN_NAV.classList.remove('scrolled');
 
         posY > window.innerHeight ? UP_BUTTON.classList.add('shown') : UP_BUTTON.classList.remove('shown');
 
-        //animate content inner headers
+        //add animation class to dedicated elements
         CONTENT_PARTS.forEach(el => {
             let elPosTop = el.offsetTop;
             if(posY + window.innerHeight/3 >= elPosTop){
-                el.querySelector('h3').classList.add('shown')
+                let animatedBlock: HTMLElement = el.querySelector('.drop_down');
+                return animatedBlock ? animatedBlock.classList.add('shown') : false;
             }
         });
     });
@@ -41,27 +42,31 @@ UP_BUTTON.addEventListener('click', function () : void {
 CONTENT_LINKS.forEach(el => {
     el.onclick = (event:MouseEvent) => {
         event.preventDefault();
+        if (!el.classList.contains('active')){
+            const ELID: string = el.getAttribute('href'),
+                ACTIVE: HTMLElement = document.querySelector(ELID),
+                SIBLINGS: Array<Element> = Array.from(ACTIVE.parentElement.children).filter(ch=>ch!=ACTIVE);
 
-        const ELID: string = el.getAttribute('href'),
-            ACTIVE: HTMLElement = document.querySelector(ELID),
-            SIBLINGS: Array<Element> = Array.from(ACTIVE.parentElement.children).filter(ch=>ch!=ACTIVE);
+            ACTIVE.classList.add('active');
+            SIBLINGS.forEach(sibling => sibling.classList.remove('active'));
 
-        ACTIVE.classList.add('active');
-        SIBLINGS.forEach(sibling => sibling.classList.remove('active'));
+            Array.from(MOBILE_NAV.children).forEach(child => {
+                child.classList.remove('active');
+                if (child.getAttribute('href') === ELID){
+                    child.classList.add('active');
+                }
+            });
 
-        Array.from(MOBILE_NAV.children).forEach(child => {
-            child.classList.remove('active');
-            if (child.getAttribute('href') === ELID){
-                child.classList.add('active');
+            //remove animation class from dedicated elements after switching content tabs
+            CONTENT_PARTS.forEach(el => {
+                let animatedBlock: HTMLElement = el.querySelector('.drop_down');
+                return animatedBlock ? animatedBlock.classList.remove('shown') : false;
+            });
+
+            //close float nav and set burger to initial position on mobile devices
+            if (MOBILE_NAV.classList.contains('enabled')){
+                [BURGER_BUTTON, MOBILE_NAV].forEach(el => el.classList.remove('enabled'));
             }
-        });
-
-        //remove shown class from each header to cycle animation on active content
-        CONTENT_PARTS.forEach(el => el.children[0].classList.remove('shown'));
-
-        //close float nav and set burger to initial position on mobile devices
-        if (MOBILE_NAV.classList.contains('enabled')){
-            [BURGER_BUTTON, MOBILE_NAV].forEach(el => el.classList.remove('enabled'));
         }
     }
 });
