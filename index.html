@@ -1,288 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex,nofollow">
-    <title>Mishura Serhii</title>
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <nav id="main_nav">
-          <div class="nav__title">
-            <h4>
-              <a href="#home">Serhii Mishura</a>
-            </h4>
-            <span>Frontend Developer</span>
-          </div>
-          <div class="nav__links">
-            <a href="#resume">Resume</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <button class="nav__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-      </header>
-      <main>
-        <section class="active" id="home">
-          <div class="home__block">
-            <div class="home__pic">
-              <img src="src/images/photo.jpg" alt="Serhii Mishura photo">
-            </div>
-            <div class="home__about">
-              <h1>Hello</h1>
-              <h4>A bit about me</h4>
-              <p>My name is Serhii and I'm a frontend developer. During my career I worked my way up from a CMS content manager to a full-grown frontend developer and created many web applications of different scales and levels. I love software development, and front-end development in particular, because it gives me room for creativity and provides various tools to translate my ideas into something tangible and useful. In my free time, I like to play boardgames and TTRPG with my wife and friends.</p>
-              <div class="about__actions">
-                <a href="#resume">Resume</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="resume">
-          <h2 class="section__header">Resume <a href="resume.pdf" class="download">download</a></h2>
-          <div class="section__content">
-            <div class="description">
-              <h3>Work <br>Experience</h3>
-            </div>
-            <div class="exp">
-              <div class="exp__part">
-                <div class="exp_when">2016 - 2022</div>
-                <div class="exp_what">
-                  <h5>Frontend Developer</h5>
-                  <p class="company strong">Cheil Worldwide</p>
-                  <p>Development, optimization and maintenance of Samsung Electronics (Central Eurasia) responsive
-                    landing pages, microsites and web applications using HTML5, SCSS, native JavaScript, jQuery and
-                    Vue.js.</p>
-                  <div class="links">
-                    <a href="https://www.samsung.com/ru" target="_blank">samsung.com/ru</a>
-                    <a href="https://www.samsung.com/ua" target="_blank">samsung.com/ua</a>
-                  </div>
-                </div>
-              </div>
-              <div class="exp__part">
-                <div class="exp_when">2014 - 2016</div>
-                <div class="exp_what">
-                  <h5>Hardware and software specialist</h5>
-                  <p class="company strong">Infomedfarm Dialog</p>
-                  <p>Development, optimization and maintenance of company and company’s events websites. Organizing
-                    and conducting online broadcasts of events. Server and local network administration. </p>
-                  <div class="links">
-                    <a href="https://www.imfd.ru" target="_blank">imfd.ru</a>
-                    <a href="https://www.dialog.imfd.ru" target="_blank">dialog.imfd.ru</a>
-                    <a href="https://www.imfd-expo.ru" target="_blank">imfd-expo.ru</a>
-                  </div>
-                </div>
-              </div>
-              <div class="exp__part">
-                <div class="exp_when">2012 - 2013</div>
-                <div class="exp_what">
-                  <h5>Webmaster</h5>
-                  <p class="company strong">Graver LLC</p>
-                  <p>Development and maintenance of company's main and e-commerce websites. Search Engine Optimization,
-                    running online marketing campaigns</p>
-<!--                  <div class="links">
-                    <a href="https://www.graver.ua" target="_blank">graver.ua</a>
-                  </div>-->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section__content with--divider">
-            <div class="description">
-              <h3 class="drop_down">Education</h3>
-            </div>
-            <div class="exp">
-              <div class="exp__part">
-                <div class="exp_when">2008 - 2013</div>
-                <div class="exp_what">
-                  <h5>Master of Public Relations</h5>
-                  <p class="company">Classic Private University | Zaporizhzhia, Ukraine</p>
-                </div>
-              </div>
-              <div class="exp__part">
-                <div class="exp_when">2004 - 2008</div>
-                <div class="exp_what">
-                  <h5>Bachelor of Computer Programming</h5>
-                  <p class="company">Electrotechnical Professional College | Zaporizhzhia, Ukraine</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section__content with--divider">
-            <div class="description">
-              <h3 class="drop_down">Skills <br>& Expertise</h3>
-            </div>
-            <div class="exp">
-              <div class="exp__part">
-                <div class="exp_when"></div>
-                <div class="exp_what">
-                  <ul class="list">
-                    <li>Web component development</li>
-                    <li>Object-oriented programming</li>
-                    <li>Understanding and solving complex problems</li>
-                    <li>Deadline adherence</li>
-                    <li>Corporate Development Environment</li>
-                    <li>Frontend development: JavaScript, HTML5, CSS3, SASS, REST API</li>
-                    <li>Development Tools: Webpack, Vite, npm, Git, Figma, WebStorm</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="projects">
-          <h2 class="section__header">Projects</h2>
-          <div class="section__content">
-            <div class="description">
-              <h3>Samsung Electronics Russia <br>RB7300 fridge promo page</h3>
-              <p>A promotional page for the new line of Samsung refrigerators with slideshow-like scrolling,
-                navigation and various transitions and animations. Includes "Buy" and "Learn More" call-to-action
-                buttons with integration with Samsung e-commerce API (displaying stock, current price and adding to
-                cart if available). Built with JavaScript (using jQuery, Hammer.js, Mustache.js, GSAP,
-                Underscore.js, Flickity.js libraries), HTML, SCSS</p>
-            </div>
-            <div class="proj">
-              <a href="https://www.samsung.com/ru/promotions/rb7300/" target="_blank">
-                <img src="src/images/projects/1.jpg"
-                     alt="Samsung Electronics Russia RB7300 fridge promo page screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Samsung Electronics Ukraine <br>Jet & Jet Bot promo page</h3>
-              <p>A promotional page for the Samsung vacuum cleaners. Includes "Buy" and "Learn More" call-to-action
-                buttons with integration with Samsung e-commerce API (displaying stock, current price and adding to
-                cart if available). Built with JavaScript (using Vue.js, Webpack), HTML, SCSS</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://www.samsung.com/ua/promotion/vc-buds-bundle/" target="_blank">
-                <img src="src/images/projects/8.jpg"
-                     alt="Samsung Electronics Ukraine Jet & Jet Bot promo page">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Samsung in Russia microsite</h3>
-              <p>Microsite dedicated to social projects of Samsung Electronics in Russia. Contains 11 pages,
-                includes multiple transitions, animations and sliders. Built with JavaScript (using jQuery,
-                Flickity.js libraries), HTML, SCSS</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://www.samsung.com/ru/inrussia/" target="_blank">
-                <img src="src/images/projects/6.jpg" alt="Samsung in Russia microsite screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Samsung Electronics Russia <br> The Premiere page</h3>
-              <p>Promotional page for the Premiere projector with application form. Built with
-                jQuery and Inputmask.js plugin using integration with Samsung API</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://www.samsung.com/ru/projectors/the-premiere/try_and_buy/" target="_blank">
-                <img src="src/images/projects/7.jpg" alt="Samsung The Premiere page screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Samsung Electronics Russia <br>The Frame configurator</h3>
-              <p>A configurator for Samsung's The Frame line of TVs that lets you see what a TV would look like with
-                different frames, check stock availability and pricing, and add to the card if available. Built with
-                JavaScript (using jQuery, Flickity.js libraries), HTML, SCSS</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://www.samsung.com/ru/lifestyle-tvs/the-frame/highlights/" target="_blank">
-                <img src="src/images/projects/2.jpg" alt="Samsung Electronics Russia The Frame configurator screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Omdb finder application</h3>
-              <p>Simple open movie database finder that lets you search for the particular movie with dropdown
-                suggestions, see poster and information about a movie and watch a YouTube trailer. Built with
-                Vue.js and Webpack using integration with YouTube API, OMDB API</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://mishura.site/projects/omdb/" target="_blank">
-                <img src="src/images/projects/3.jpg" alt="Simple omdb application screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Todo application</h3>
-              <p>Simple todo application, that lets you add, delete, check and sort tasks. Has possibility to
-                switch between light and dark themes and save/delete a list using localStorage. Built with Vue.js
-                and Webpack</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://mishura.site/projects/todo/" target="_blank">
-                <img src="src/images/projects/4.jpg" alt="Simple todo application screenshot">
-              </a>
-            </div>
-          </div>
-          <div class="section__content">
-            <div class="description">
-              <h3>Countdown configurator application</h3>
-              <p>Countdown configurator for those who are not familiar with the code. Input necessary information,
-              choose styling and copy-paste generated code to your page. Built with jQuery.</p>
-            </div>
-            <div class="proj drop_down">
-              <a href="https://mishura.site/projects/countdown/" target="_blank">
-                <img src="src/images/projects/5.jpg" alt="Simple countdown configurator application screenshot">
-              </a>
-            </div>
-          </div>
-        </section>
-        <section id="contact">
-          <h2 class="section__header">contact</h2>
-          <span>coming soon</span>
-        </section>
-      </main>
-      <button class="scroll_top"></button>
-      <footer class="with--divider">
-        <div class="footer__column">
-          <h5>Phone</h5>
-          <p>
-            <a href="tel:+14039703033">+1 403-970-3033</a>
-          </p>
-        </div>
-        <div class="footer__column">
-          <h5>Email</h5>
-          <p>
-            <a href="mailto:dev.mishura@gmail.com">dev.mishura@gmail.com</a>
-          </p>
-        </div>
-        <div class="footer__column">
-          <h5>Connect</h5>
-          <div class="column__list">
-            <a href="https://linkedin.com/in/mishura" target="_blank">
-              <img src="src/images/linkedin.svg" alt="LinkedIn logo">
-            </a>
-            <a href="https://github.com/MishuraSergey" target="_blank">
-              <img src="src/images/github.svg" alt="GitHub logo">
-            </a>
-          </div>
-        </div>
-        <div class="footer__column">
-          <p class="by">© 2022 By Serhii Mishura</p>
-        </div>
-      </footer>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="src/images/favicon.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="robots" content="noindex,nofollow">
+	<title>Mishura Serhii page</title>
+</head>
+<body style="opacity: 0;">
+<div id="app">
+	<header>
+		<nav id="main_nav">
+			<div class="nav__title">
+				<h4>
+					<a href="#home">Serhii Mishura</a>
+				</h4>
+				<span>Frontend Developer</span>
+			</div>
+			<div class="nav__links">
+				<a href="#resume">Resume</a>
+				<a href="#projects">Projects</a>
+				<a href="#contact">Contact</a>
+			</div>
+			<button class="nav__burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</nav>
+	</header>
+	<main id="main">
+		<section class="active" id="home">
+			<div class="home__block">
+				<div class="home__pic">
+					<img src="src/images/photo.jpg" alt="Serhii Mishura photo">
+				</div>
+				<div class="home__about">
+					<h1>Hello</h1>
+					<h4>A bit about me</h4>
+					<p>My name is Serhii and I'm a frontend developer. During my career I worked my way up from a CMS
+						content manager to a full-grown frontend developer and created many web applications of
+						different scales and levels. I love software development, and front-end development in
+						particular, because it gives me room for creativity and provides various tools to translate my
+						ideas into something tangible and useful. In my free time, I like to play boardgames and TTRPG
+						with my wife and friends.</p>
+					<div class="about__actions">
+						<a class="btn" href="#resume">Resume</a>
+						<a class="btn" href="#projects">Projects</a>
+						<a class="btn" href="#contact">Contact</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="resume">
+			<h2 class="section__header">Resume <a href="resume.pdf" class="download">download</a></h2>
+			<div class="section__content">
+				<div class="description">
+					<h3>Work <br>Experience</h3>
+				</div>
+				<div class="exp">
+					<div class="exp__part">
+						<div class="exp_when">2016 - 2022</div>
+						<div class="exp_what">
+							<h5>Frontend Developer</h5>
+							<p class="company strong">Cheil Worldwide</p>
+							<p>Development, optimization and maintenance of Samsung Electronics (Central Eurasia)
+								responsive
+								landing pages, microsites and web applications using HTML5, SCSS, native JavaScript,
+								jQuery and
+								Vue.js.</p>
+							<div class="links">
+								<a href="https://www.samsung.com/ru" target="_blank">samsung.com/ru</a>
+								<a href="https://www.samsung.com/ua" target="_blank">samsung.com/ua</a>
+							</div>
+						</div>
+					</div>
+					<div class="exp__part">
+						<div class="exp_when">2014 - 2016</div>
+						<div class="exp_what">
+							<h5>Hardware and software specialist</h5>
+							<p class="company strong">Infomedfarm Dialog</p>
+							<p>Development, optimization and maintenance of company and company’s events websites.
+								Organizing
+								and conducting online broadcasts of events. Server and local network
+								administration. </p>
+							<div class="links">
+								<a href="https://www.imfd.ru" target="_blank">imfd.ru</a>
+								<a href="https://www.dialog.imfd.ru" target="_blank">dialog.imfd.ru</a>
+								<a href="https://www.imfd-expo.ru" target="_blank">imfd-expo.ru</a>
+							</div>
+						</div>
+					</div>
+					<div class="exp__part">
+						<div class="exp_when">2012 - 2013</div>
+						<div class="exp_what">
+							<h5>Webmaster</h5>
+							<p class="company strong">Graver LLC</p>
+							<p>Development and maintenance of company's main and e-commerce websites. Search Engine
+								Optimization,
+								running online marketing campaigns</p>
+							<!--                  <div class="links">
+												<a href="https://www.graver.ua" target="_blank">graver.ua</a>
+											  </div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section__content with--divider">
+				<div class="description">
+					<h3 class="drop_down">Education</h3>
+				</div>
+				<div class="exp">
+					<div class="exp__part">
+						<div class="exp_when">2008 - 2013</div>
+						<div class="exp_what">
+							<h5>Master of Public Relations</h5>
+							<p class="company">Classic Private University | Zaporizhzhia, Ukraine</p>
+						</div>
+					</div>
+					<div class="exp__part">
+						<div class="exp_when">2004 - 2008</div>
+						<div class="exp_what">
+							<h5>Bachelor of Computer Programming</h5>
+							<p class="company">Electrotechnical Professional College | Zaporizhzhia, Ukraine</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section__content with--divider">
+				<div class="description">
+					<h3 class="drop_down">Skills <br>& Expertise</h3>
+				</div>
+				<div class="exp">
+					<div class="exp__part">
+						<div class="exp_when"></div>
+						<div class="exp_what">
+							<ul class="list">
+								<li>Web component development</li>
+								<li>Object-oriented programming</li>
+								<li>Understanding and solving complex problems</li>
+								<li>Deadline adherence</li>
+								<li>Corporate Development Environment</li>
+								<li>Frontend development: JavaScript, HTML5, CSS3, SASS, REST API</li>
+								<li>Development Tools: Webpack, Vite, npm, Git, Figma, WebStorm</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="projects">
+			<h2 class="section__header">Projects</h2>
+			<div class="section__content">
+				<div class="description">
+					<h3>Samsung Electronics Russia <br>RB7300 fridge promo page</h3>
+					<p>A promotional page for the new line of Samsung refrigerators with slideshow-like scrolling,
+						navigation and various transitions and animations. Includes "Buy" and "Learn More"
+						call-to-action
+						buttons with integration with Samsung e-commerce API (displaying stock, current price and adding
+						to
+						cart if available). Built with JavaScript (using jQuery, Hammer.js, Mustache.js, GSAP,
+						Underscore.js, Flickity.js libraries), HTML, SCSS</p>
+				</div>
+				<div class="proj">
+					<a href="https://www.samsung.com/ru/promotions/rb7300/" target="_blank">
+						<img src="src/images/projects/1.jpg"
+						     alt="Samsung Electronics Russia RB7300 fridge promo page screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Samsung Electronics Ukraine <br>Jet & Jet Bot promo page</h3>
+					<p>A promotional page for the Samsung vacuum cleaners. Includes "Buy" and "Learn More"
+						call-to-action
+						buttons with integration with Samsung e-commerce API (displaying stock, current price and adding
+						to
+						cart if available). Built with JavaScript (using Vue.js, Webpack), HTML, SCSS</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://www.samsung.com/ua/promotion/vc-buds-bundle/" target="_blank">
+						<img src="src/images/projects/8.jpg"
+						     alt="Samsung Electronics Ukraine Jet & Jet Bot promo page">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Samsung in Russia microsite</h3>
+					<p>Microsite dedicated to social projects of Samsung Electronics in Russia. Contains 11 pages,
+						includes multiple transitions, animations and sliders. Built with JavaScript (using jQuery,
+						Flickity.js libraries), HTML, SCSS</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://www.samsung.com/ru/inrussia/" target="_blank">
+						<img src="src/images/projects/6.jpg" alt="Samsung in Russia microsite screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Samsung Electronics Russia <br> The Premiere page</h3>
+					<p>Promotional page for the Premiere projector with application form. Built with
+						jQuery and Inputmask.js plugin using integration with Samsung API</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://www.samsung.com/ru/projectors/the-premiere/try_and_buy/" target="_blank">
+						<img src="src/images/projects/7.jpg" alt="Samsung The Premiere page screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Samsung Electronics Russia <br>The Frame configurator</h3>
+					<p>A configurator for Samsung's The Frame line of TVs that lets you see what a TV would look like
+						with
+						different frames, check stock availability and pricing, and add to the card if available. Built
+						with
+						JavaScript (using jQuery, Flickity.js libraries), HTML, SCSS</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://www.samsung.com/ru/lifestyle-tvs/the-frame/highlights/" target="_blank">
+						<img src="src/images/projects/2.jpg"
+						     alt="Samsung Electronics Russia The Frame configurator screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Omdb finder application</h3>
+					<p>Simple open movie database finder that lets you search for the particular movie with dropdown
+						suggestions, see poster and information about a movie and watch a YouTube trailer. Built with
+						Vue.js and Webpack using integration with YouTube API, OMDB API</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://mishura.site/projects/omdb/" target="_blank">
+						<img src="src/images/projects/3.jpg" alt="Simple omdb application screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Todo application</h3>
+					<p>Simple todo application, that lets you add, delete, check and sort tasks. Has possibility to
+						switch between light and dark themes and save/delete a list using localStorage. Built with
+						Vue.js
+						and Webpack</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://mishura.site/projects/todo/" target="_blank">
+						<img src="src/images/projects/4.jpg" alt="Simple todo application screenshot">
+					</a>
+				</div>
+			</div>
+			<div class="section__content">
+				<div class="description">
+					<h3>Countdown configurator application</h3>
+					<p>Countdown configurator for those who are not familiar with the code. Input necessary information,
+						choose styling and copy-paste generated code to your page. Built with jQuery.</p>
+				</div>
+				<div class="proj drop_down">
+					<a href="https://mishura.site/projects/countdown/" target="_blank">
+						<img src="src/images/projects/5.jpg" alt="Simple countdown configurator application screenshot">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section id="contact">
+			<h2 class="section__header">Contact</h2>
+			<div class="section__content">
+				<div class="description">
+					<p>Looking forward to hearing from you</p>
+					<h5>Phone</h5>
+					<p>
+						<a href="tel:+14039703033">+1 403-970-3033</a>
+					</p>
+					<h5>Email</h5>
+					<p>
+						<a href="mailto:dev.mishura@gmail.com">dev.mishura@gmail.com</a>
+					</p>
+				</div>
+				<div class="form">
+					<form action="https://formsubmit.co/3f9bca4024d277219e97ca5eee18a08f" method="POST" id="form">
+						<input type="hidden" name="_captcha" value="false">
+						<div class="form__field">
+							<label for="input_name">Full Name</label>
+							<input type="text" name="Name" id="input_name" required>
+						</div>
+						<div class="form__field">
+							<label for="input_email">Email</label>
+							<input type="email" name="Email" id="input_email" required
+							       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+						</div>
+						<div class="form__field">
+							<label for="input_message">Message</label>
+							<textarea name="message" id="input_message" rows="10" required></textarea>
+						</div>
+						<div class="form__field">
+							<button type="submit" class="btn">Submit</button>
+							<p class="form__response"></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="with--divider">
+		<div class="footer__column">
+			<h5>Phone</h5>
+			<p>
+				<a href="tel:+14039703033">+1 403-970-3033</a>
+			</p>
+		</div>
+		<div class="footer__column">
+			<h5>Email</h5>
+			<p>
+				<a href="mailto:dev.mishura@gmail.com">dev.mishura@gmail.com</a>
+			</p>
+		</div>
+		<div class="footer__column">
+			<h5>Connect</h5>
+			<div class="column__list">
+				<a href="https://linkedin.com/in/mishura" target="_blank">
+					<img src="src/images/linkedin.svg" alt="LinkedIn logo">
+				</a>
+				<a href="https://github.com/MishuraSergey" target="_blank">
+					<img src="src/images/github.svg" alt="GitHub logo">
+				</a>
+			</div>
+		</div>
+		<div class="footer__column">
+			<p class="by">© 2022 By Serhii Mishura</p>
+		</div>
+	</footer>
+</div>
+<button class="scroll_top"></button>
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
